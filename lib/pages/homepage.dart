@@ -11,8 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WeatherController weatherController = Get.put(WeatherController());
-    PoppulationController poppulationController =
-        Get.put(PoppulationController());
+
     RxString selectedCirty = "Indor".obs;
 
     // List of items in our dropdown menu
@@ -67,7 +66,6 @@ class HomePage extends StatelessWidget {
                   IconButton(
                     onPressed: () {
                       weatherController.getWeather("gaya");
-                      poppulationController.getPoppulation("gaya");
                     },
                     icon: Icon(Icons.refresh),
                   )
@@ -269,85 +267,6 @@ class HomePage extends StatelessWidget {
                     ],
                   )),
               SizedBox(height: 10),
-              Obx(() => Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        width: 180,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          color: Color(0xff443C68),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Column(children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                "assets/humidity.png",
-                                width: 50,
-                              ),
-                              Text(
-                                "Poppulation",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            "${weatherController.weather.value.humidity.toString()} %",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ]),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        width: 180,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          color: Color(0xff443C68),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Column(children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                "assets/hail.png",
-                                width: 50,
-                              ),
-                              Text(
-                                "COVID",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            "${weatherController.weather.value.pressure.toString()} F",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ]),
-                      ),
-                    ],
-                  ))
             ],
           ),
         ),
