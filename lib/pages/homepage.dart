@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
-import 'package:weather_app/api/controller/popullation_controller.dart';
 import 'package:weather_app/api/controller/weather_controller.dart';
 
 class HomePage extends StatelessWidget {
